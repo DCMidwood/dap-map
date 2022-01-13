@@ -21,7 +21,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+[![MIT License][license-shield]][https://github.com/DCMidwood/dap-map/blob/main/LICENSE]
 [![LinkedIn][linkedin-shield]][https://www.linkedin.com/in/danielcm1/]
 
 
