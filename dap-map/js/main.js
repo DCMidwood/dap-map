@@ -8,7 +8,10 @@ require([
     "esri/widgets/Expand"  ,
     "esri/widgets/LayerList",
     "esri/widgets/FeatureTable",    
-    "esri/layers/WMSLayer"
+    "esri/layers/WMSLayer",
+    "esri/layers/TileLayer",
+    "esri/layers/VectorTileLayer",
+    "esri/core/watchUtils"
 ], function(
     esriConfig,
     Map,
@@ -19,7 +22,10 @@ require([
     Expand,
     LayerList,
     FeatureTable,
-    WMSLayer
+    WMSLayer,
+    TileLayer,
+    VectorTileLayer,
+    watchUtils
 ) { 
 
     // Set API Key
@@ -118,8 +124,19 @@ require([
 
       const map = new Map({
         //basemap: "gray-vector"
-        //basemap: "arcgis-topographic", // Basemap layer
-        basemap: "satellite",
+        basemap:{
+          // layers drawn at the bottom
+          baselayers:[
+          new TileLayer(
+            {url: "https://services.arcgisonline.com/arcgis/rest/services/Elevation/World_Hillshade_Dark/MapServer/0"}
+          ),
+          new VectorTileLayer(
+            {id: 'fae788aa91e54244b161b59725dcbb2a'}
+          )]
+        },
+      
+        // World Elevation from ESRI
+        ground: "world-elevation",
         layers: [openStreet_layer, sssi_Layer, design_geojsonLayer]
     }); 
 
@@ -138,6 +155,8 @@ require([
         //center: [-117.506, 33.66559],
         //zoom: 12
     });
+
+    view.watch("scale", (newValue, oldValue, property, target) => console.log('scale changed: ${newValue}'))
 
     // Adding a legend and expand widget
     const legend = new Legend({
