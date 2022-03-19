@@ -6,9 +6,9 @@ require([
     "esri/layers/GeoJSONLayer", 
     "esri/widgets/Legend",
     "esri/widgets/Expand"  ,
-    "esri/widgets/LayerList",
-    "esri/widgets/FeatureTable",    
-    "esri/layers/WMSLayer"
+    "esri/widgets/LayerList",  
+    "esri/layers/WMSLayer",
+    "esri/widgets/Editor"
 ], function(
     esriConfig,
     Map,
@@ -18,8 +18,8 @@ require([
     Legend,
     Expand,
     LayerList,
-    FeatureTable,
-    WMSLayer
+    WMSLayer,
+    Editor
 ) { 
 
     // Set API Key
@@ -123,8 +123,6 @@ require([
         layers: [openStreet_layer, sssi_Layer, design_geojsonLayer]
     }); 
 
-    
-
     view = new MapView({
         container: "viewDiv",
         map: map,
@@ -155,23 +153,23 @@ require([
           ]
     });
 
-
     let layerList = new LayerList({
-        view: view
-      });
-    
+          view: view
+        });
+      
     const expand = new Expand({
-        view: view,
-        content: legend,
-        expanded: true
+          view: view,
+          content: legend,
+          expanded: true
     });
 
     view.ui.add(expand, "top-right");
 
 
-    // Adds widget below other elements in the top left corner of the view
+      // Adds widget below other elements in the top left corner of the view
     view.ui.add(layerList, {
-        position: "top-left"
+          position: "top-left"
       });
 
+    
 });
