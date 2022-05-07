@@ -71,14 +71,13 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
+DAP Map Application - Demonstration of using a web mapping application using the ArcGIS API for JavaScript
 Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email`, `email_client`, `project_title`, `project_description`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Built With
 
-- [Next.js](https://nextjs.org/)
-- [React.js](https://reactjs.org/)
 - [Vue.js](https://vuejs.org/)
 - [Angular](https://angular.io/)
 - [Svelte](https://svelte.dev/)
@@ -106,16 +105,15 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/DCMidwood/dap-map.git
    ```
-3. Install NPM packages
+2. Install NPM packages
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
+3. Enter your API in `config.js`
    ```js
    const API_KEY = "ENTER YOUR API";
    ```
