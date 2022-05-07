@@ -8,7 +8,7 @@
     <meta name="author" content="Daniel Caparros Midwood daniel.c.midwood@gmail.com">
     <meta name="copyright" content="@the_spatial 2022">
     <meta name="abstract" content="Application for viewing DAP spatial data">
-    <link rel="icon" href="data/dap_logo.jpg"/>
+    <link rel="icon" href="data/dap-map-logo.jpg"/>
 
     <title>DAP Map by ©the_spatial</title>
     <link rel="stylesheet" href="css/main.css" />
@@ -20,21 +20,42 @@
 
     <script src="https://js.arcgis.com/4.18/"></script>
     <script src="js/main.js"></script>
+
+    <script src="https://unpkg.com/terraformer@1.0.9"></script>
+    <script src="https://unpkg.com/terraformer-arcgis-parser@1.0.5"></script>
+
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a >
-        <img class="navbar-brand-image" src="data/dap_logo.jpg" height="40px">
+
+    <!--Logo-->
+    <div id="logo" class="navbar-logo">
+      <a href="https://github.com/DCMidwood/dap-map" target="_blank">
+        <img src="data/dap-map-logo.jpg" height="40px">
       </a>
     </div>  
+    <!--Title-->
+    <div class ="title-bar">
+      <span class="title-main">DAP MAP</span>
+      <span class="title-divider"></span>
+      <span class="title-subheader">Design Automation Platform Map Viewer</span>
+      <span class="title-divider"></span>
+      <span class="title-subheader">©the spatial </span>      
+    </div>
   </nav>
   <!-- Map Container  -->
-  <div id="viewDiv"></div>
+
+  <div id="viewDiv">  <div
+    id="export"
+    class="esri-widget esri-widget--button esri-widget esri-interactive"
+    title="Export to GeoJSON"
+    >
+ <span class="esri-icon-download"></span>
+</div>
   <div class="dap-map">
   
   </div>
-  
+
 </body>
 </html>
