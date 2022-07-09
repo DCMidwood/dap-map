@@ -1,5 +1,3 @@
-"use strict";
-
 require([
   "esri/config",
   "esri/Map",
@@ -165,42 +163,5 @@ require([
   // Adds widget below other elements in the top left corner of the view
   view.ui.add(layerList, {
     position: "top-left",
-  });
-
-  view.when(() => {
-    let editor = new Editor({
-      view: view,
-      layerInfos: [
-        {
-          layer: design_geojsonLayer,
-        },
-      ],
-    });
-    view.ui.add(editor, "bottom-right");
-    view.ui.add(exportBtn, "bottom-left");
-  });
-  exportBtn.addEventListener("click", () => {
-    design_geojsonLayer
-      .queryFeatures()
-      .then(({ features }) => {
-        const FeatureCollection = {
-          type: "FeatureCollection",
-          features: [],
-        };
-        FeatureCollection.features = features.map(
-          ({ attributes, geometry }, index) => {
-            return {
-              id: index,
-              properties: attributes,
-              geometry: Terraformer.ArcGIS.parse(geometry),
-            };
-          }
-        );
-        // Do something with your GeoJSON
-        // Download it or send it to an external API
-        // to update your existing GeoJSON
-        console.log("FeatureCollection", FeatureCollection);
-      })
-      .catch((error) => console.warn(error));
   });
 });

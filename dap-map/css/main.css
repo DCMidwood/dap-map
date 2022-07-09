@@ -1,15 +1,43 @@
 html,
-body,
-#viewDiv {
+body {
   font-family: "Avenir Next W00", "Avenir Next", Avenir;
   padding: 20;
   margin: 20;
+  width: 100%;
+  height: 20px;
+}
+
+#viewDiv {
+  display: flex;
+  top: 700px;
+  margin: 20;
+  width: 100%;
   height: 100%;
+}
+
+.dap-map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: auto;
 }
 
 .navbar-fixed-top {
   top: 0;
   border-width: 0 0 1px;
+}
+
+.nav {
+  float: left;
+}
+
+/* Change the color of links on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
 }
 
 .navbar-logo {
@@ -40,4 +68,11 @@ body,
   color: white;
   font-size: 12pt;
   font-weight: 200;
+}
+
+/* Right-aligned section inside the top navigation */
+.nav-right .ml-auto {
+  float: right;
+  left: auto !important;
+  right: 0px;
 }
